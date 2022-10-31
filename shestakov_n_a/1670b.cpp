@@ -44,6 +44,5 @@ int main()
         }
         std::cout << cnt << '\n';
     }
-
     return 0;
 }
