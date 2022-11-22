@@ -1,5 +1,4 @@
-﻿#include <iostream>
-#include <vector>
+#include <iostream>
 
 int main() {
     int t = 0;
