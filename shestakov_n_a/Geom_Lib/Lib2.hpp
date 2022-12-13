@@ -35,6 +35,10 @@ Rdec2D operator*(Rdec2D lhs, const double& rhs);
 
 Rdec2D operator/(Rdec2D lhs, const double& rhs);
 
+bool operator==(const Rdec2D& vect1, const Rdec2D& vect2);
+
+bool operator!=(const Rdec2D& vect1, const Rdec2D& vect2);
+
 double norm(const Rdec2D& vec);
 
 double dot(const Rdec2D& lhs, const Rdec2D& rhs);
