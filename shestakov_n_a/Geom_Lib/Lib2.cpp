@@ -74,7 +74,25 @@ Rdec2D operator/(Rdec2D lhs, const double& rhs) {
     res /= rhs;
     return res;
 }
+bool operator==(const Rdec2D& vect1, const Rdec2D& vect2) {
+    if ((vect1.x == vect2.x) && (vect1.y == vect2.y)) {
+        return true;
 
+    }
+    else {
+        return false;
+    }
+}
+
+bool operator!=(const Rdec2D& vect1, const Rdec2D& vect2) {
+    if ((vect1.x != vect2.x) || (vect1.y != vect2.y)) {
+        return true;
+
+    }
+    else {
+        return false;
+    }
+}
 double norm(const Rdec2D& vec) {
     return std::sqrt(vec.x * vec.x + vec.y * vec.y);
 }
