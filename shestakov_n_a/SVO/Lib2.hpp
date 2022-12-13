@@ -1,35 +1,48 @@
-#include <iosfwd>
-
+#include <iostream>
+#include <cmath>
 
 struct Rdec2D {
-	double x = 0.0;
-	double y = 0.0;
+    double x = 0;
+    double y = 0;
 };
 
-struct RPol2D {
-	double len = 0.0;
-	double deg = 0.0;
+struct Rpol2D {
+    double r = 0;
+    double phi = 0;
 };
 
+std::ostream& operator<<(std::ostream& out, const Rpol2D& point);
 
-std::ostream& operator<<(std::ostream& ostrm, const Rdec2D& z);
-std::ostream& operator<<(std::ostream& ostrm, const RPol2D& z);
+Rdec2D ToDec(Rpol2D vector);
 
-Rdec2D operator*(double m, const Rdec2D& rhs);
-Rdec2D operator*(const Rdec2D lhs, double m);
+Rpol2D ToPol(Rdec2D vector);
+
+std::ostream& operator<<(std::ostream& out, const Rdec2D& point);
+
+Rdec2D operator+=(Rdec2D& lhs, const Rdec2D& rhs);
+
+Rdec2D operator-=(Rdec2D& lhs, const Rdec2D& rhs);
+
 Rdec2D operator+(const Rdec2D& lhs, const Rdec2D& rhs);
-Rdec2D operator--(const Rdec2D& lhs);
-Rdec2D operator-(const Rdec2D& rhs);
-Rdec2D operator-(const Rdec2D& lhs, const Rdec2D& rhs);
-Rdec2D operator/(const Rdec2D& lhs, double m);
 
-bool operator==(const Rdec2D& lhs, const Rdec2D& rhs);
-bool operator!=(const Rdec2D& lhs, const Rdec2D& rhs);
+Rdec2D operator-(const Rdec2D& lhs, const Rdec2D& rhs);
+
+Rdec2D operator*=(Rdec2D& lhs, const double& rhs);
+
+Rdec2D operator/=(Rdec2D& lhs, const double& rhs);
+
+Rdec2D operator*(Rdec2D lhs, const double& rhs);
+
+Rdec2D operator/(Rdec2D lhs, const double& rhs);
+
+double norm(const Rdec2D& vec);
 
 double dot(const Rdec2D& lhs, const Rdec2D& rhs);
-double norm(const Rdec2D& lhs);
 
-Rdec2D ToDec(const RPol2D& lhs);
-RPol2D ToPol(const Rdec2D& lhs);
+Rpol2D operator+=(Rpol2D& lhs, const Rpol2D& rhs);
 
+Rpol2D operator-=(Rpol2D& lhs, const Rpol2D& rhs);
 
+Rpol2D operator+(const Rpol2D& lhs, const Rpol2D& rhs);
+
+Rpol2D operator-(const Rpol2D& lhs, const Rpol2D& rhs);
