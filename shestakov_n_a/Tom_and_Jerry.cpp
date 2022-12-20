@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "Lib2.hpp"
+#include "Geom1.hpp"
 
 int main() {
 	Rdec2D r_m = { 0, -13};
