@@ -2,7 +2,7 @@
 #include <cmath>
 #include <fstream>
 #include <vector>
-#include "Lib2.hpp"
+#include "Geom1.hpp"
 
 std::vector<double> collision_of_cores(Rdec2D r_1, Rdec2D v_1_x, Rdec2D v_1_y,
     Rdec2D r_2, Rdec2D v_2_x, Rdec2D v_2_y,
