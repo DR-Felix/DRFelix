@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "Lib2.hpp"
+#include "Geom1.hpp"
 
 
 std::ostream& operator<<(std::ostream& out, const Rpol2D& point) {
