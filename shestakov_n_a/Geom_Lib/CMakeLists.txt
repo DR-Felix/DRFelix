@@ -1,3 +1,3 @@
-add_library (Lib2 STATIC "Lib2.hpp" "Lib2.cpp")
+add_library (Geom STATIC "Geom1.hpp" "Geom1.cpp")
 
 target_include_directories(Lib2 PUBLIC ".")
