@@ -1,4 +1,4 @@
-﻿#include <iosfwd>
+#include <iosfwd>
 #include <exception>
 #include <stdexcept>
 
@@ -18,6 +18,8 @@ public:
     Rational& operator-=(const Rational& rhs);
     Rational& operator*=(const Rational& rhs);
     Rational& operator/=(const Rational& rhs);
+
+    Rational& operator-(const Rational& rhs);
 
     std::istream& readFrom(std::istream& istrm);
     std::ostream& writeTo(std::ostream& ostrm) const; //const, поскольку нам нужен только вывод
