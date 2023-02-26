@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <sstream>
 #include <exception>
 #include <string>
@@ -172,6 +172,9 @@ Rational operator/(const Rational& lhs, const Rational& rhs) {
     return del;
 }
 
+Rational& Rational::operator-(const Rational& rhs) {
+    return (Rational(0, 1) - rhs);
+}
 
 bool Rational::operator>(const Rational& rhs) const {
     return ((num * rhs.denum - rhs.num * denum) > 0);
@@ -189,3 +192,7 @@ bool operator>=(const Rational& lhs, const Rational& rhs) {
     return !rhs.operator>(lhs);
 }
 
+int main() {
+    Rational a(1, 2);
+    std::cout << a;
+}
