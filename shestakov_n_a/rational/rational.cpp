@@ -191,8 +191,3 @@ bool operator<=(const Rational& lhs, const Rational& rhs) {
 bool operator>=(const Rational& lhs, const Rational& rhs) {
     return !rhs.operator>(lhs);
 }
-
-int main() {
-    Rational a(1, 2);
-    std::cout << a;
-}
