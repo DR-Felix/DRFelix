@@ -21,7 +21,7 @@ Rational::Rational(const int32_t num_) {
     num = num_;
 }
 
-inline std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs) { //const, так как значение объекта класса Rational не меняем
+std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs) { //const, так как значение объекта класса Rational не меняем
     return rhs.writeTo(ostrm);
 }
 
@@ -30,7 +30,7 @@ std::ostream& Rational::writeTo(std::ostream& ostrm) const {
     return ostrm;
 }
 
-inline std::istream& operator>>(std::istream& istrm, Rational& rhs) //inline - повышение скорости у часто используемых функций
+std::istream& operator>>(std::istream& istrm, Rational& rhs) //inline - повышение скорости у часто используемых функций
 {                                                                   //передаем два значения: слева - объект типа потока istream, справа - наш объект класса
     return rhs.readFrom(istrm); //вызываем функцию readFrom для объекта rhs класса Rational, передав в него параметр istrm типа потока
 }                                                                   //везде используем ссылки, ибо нам не нужно копировать объекты, мы работаем с тем, что есть
