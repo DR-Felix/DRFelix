@@ -1,6 +1,7 @@
 #include <iosfwd>
 #include <exception>
 #include <stdexcept>
+#include "cstdint"
 
 class Rational {
 
@@ -40,5 +41,5 @@ Rational operator-(const Rational& lhs, const Rational& rhs);
 Rational operator*(const Rational& lhs, const Rational& rhs);
 Rational operator/(const Rational& lhs, const Rational& rhs);
 
-inline std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs);
-inline std::istream& operator>>(std::istream& istrm, Rational& rhs);
+std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs);
+std::istream& operator>>(std::istream& istrm, Rational& rhs);
