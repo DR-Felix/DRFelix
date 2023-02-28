@@ -1,13 +1,8 @@
-# CMakeList.txt: проект CMake для rational(1); включите исходный код и определения,
-# укажите здесь логику для конкретного проекта.
-#
 cmake_minimum_required (VERSION 3.8)
 
 project (rational)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17) #ставим версию CMake
 
-add_executable (rat_test test.cpp)
+add_executable (main main.cpp) #создаем exe-шник
 add_subdirectory(rational)
-target_link_libraries(rat_test rat)
-
-
+target_link_libraries(main rat) #подключаем в rat_test библиотеку rat
