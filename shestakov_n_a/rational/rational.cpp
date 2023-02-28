@@ -17,9 +17,6 @@ Rational::Rational(const int32_t num_, const int32_t denum_) {
     }
 }
 
-Rational::Rational(const int32_t num_) {
-    num = num_;
-}
 
 std::ostream& operator<<(std::ostream& ostrm, const Rational& rhs) { //const, так как значение объекта класса Rational не меняем
     return rhs.writeTo(ostrm);
@@ -112,25 +109,15 @@ Rational& Rational::NOD(Rational& const rhs) {
 Rational& Rational::operator+=(const Rational& rhs) {
     num = num * rhs.denum + denum * rhs.num;
     denum = denum * rhs.denum;
-    if (num != 0) {
-        Rational a(num, denum);
-        return NOD(a);
-    }
-    else {
-        Rational a(num);
-    }
+    Rational a(num, denum);
+    return NOD(a);
 }
 
 Rational& Rational::operator-=(const Rational& rhs) {
     num = num * rhs.denum - denum * rhs.num;
     denum = denum * rhs.denum;
-    if (num != 0) {
-        Rational a(num, denum);
-        return NOD(a);
-    }
-    else {
-        Rational a(num);
-    }
+    Rational a(num, denum);
+    return NOD(a);
 }
 
 Rational& Rational::operator*=(const Rational& rhs) {
@@ -147,6 +134,10 @@ Rational& Rational::operator/=(const Rational& rhs) {
     return NOD(a);
 }
 
+
+Rational operator-(const Rational& rhs) {
+    return (rhs * Rational(-1, 1));
+}
 
 Rational operator+(const Rational& lhs, const Rational& rhs) {
     Rational sum(lhs);
@@ -172,9 +163,6 @@ Rational operator/(const Rational& lhs, const Rational& rhs) {
     return del;
 }
 
-Rational& Rational::operator-(const Rational& rhs) {
-    return (Rational(0, 1) - rhs);
-}
 
 bool Rational::operator>(const Rational& rhs) const {
     return ((num * rhs.denum - rhs.num * denum) > 0);
